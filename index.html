@@ -13,6 +13,8 @@
 
     </head>
     <body style="background-size: cover; margin-top: 100px; background-image: url(assets/img/numeros.jpg);">
+
+        <!-- Div creado para mostrar a través de una buena UX/UI los resultados obtenidos de su consulta -->
         <div class="container" style="width: 50%; background-color: white; padding: 40px; border-radius: 25px;">
             <h3 style="margin-bottom: 30px;">Conversor de Temperatura a grados Kelvin y Farenheit a partir de grados Celcius</h3>
             Tu temperatura de <span id="celsius"></span> grados Celsius convertida es: <br><br>
@@ -23,25 +25,36 @@
         <!-- Script interno en el HTML de las funcionalidades en JS -->
         <script type="text/javascript">
 
-            // ONTENSIÓN DE NOTAS Y CALCULO DEL PROMEDIO OBTENIDO EN LOS RAMOS HTML, CSS Y JS
+        /* Ejercicio 1: Crear un programa que pida al usuario ingresar la temperatura en grados Celsius y
+        que la transforme a grados Kelvin y Fahrenheit.*/
 
-            var grados_C = celsius.innerText = prompt("Qué temperatura en grados Celsius desea convertir?");
+        // Obtención de los grados Celsius que el usuario desea convertir
+        var grados_C = celsius.innerText = prompt("¿Qué temperatura en grados Celsius desea convertir?");
 
+        //El valor obtenido y guardado en la var grados_C lo transformo en número mediante el operador parseInt
+        grados_C = parseInt(grados_C)
+
+        // Realizo las fórmulas que me calcularan las dos temperaturas correspondientes y las guardo en variables
+        var K_calculados = grados_C + 273.15;
+        var F_calculados = ((grados_C * 9)/5) +32;
+
+        // Obtengo el lugar donde mostraré en mi doc HTML y muestro al usuario sus resultados obtenidoss
+        var grados_K  = document.getElementById('kelvin').innerText = K_calculados;
+        var grados_F = document.getElementById('farenheit').innerText = F_calculados;
+
+        /*
+        if (isNaN(grados_C)) {
             grados_C = parseInt(grados_C);
-
-            /* luego ya se procede a declarar la variable total_HTML que mediante una ecuadión matemática
-            de promedio obtendrá la nota final para este */
 
             var K_calculados = grados_C + 273.15;
             var F_calculados = ((grados_C * 9)/5) +32;
 
-            /* Variables creadas para obtener un elemento del objeto documento a través de su id.
-            usando el método getElementById('id') */
-            // Variables creadas para las notas de HTML
-
             var grados_K  = document.getElementById('kelvin').innerText = K_calculados;
-            var grados_F = document.getElementById('farenheit').innerText = F_calculados ;
+            var grados_F = document.getElementById('farenheit').innerText = F_calculados;
 
+        } if else {
+            var grados_C = celsius.innerText = prompt("¿Qué temperatura en grados Celsius desea convertir?");
+        }
 
         </script>
 
